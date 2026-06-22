@@ -22,24 +22,40 @@ declare namespace NodeJS {
     /**
      * General variables and settings
      */
-    RPC_URL: string;
-    FAUCET_KEYPAIR: string;
-    // NEXT_PUBLIC_RPC_URL: string;
+    RPC_URL_DEVNET: string;
+    RPC_URL_TESTNET: string;
+    FAUCET_KEYPAIR_NEW: string;
 
-    POSTGRES_STRING: string;
     CLOUDFLARE_SECRET: string;
     IP_ALLOW_LIST: string;
+    AUTH_TOKENS_ALLOW_LIST: string;
+
+    /**
+     * Backend API authentication
+     */
+    BE_TOKEN: string;
+    BE_SERVICE_ACCOUNT_KEY: string;
+
+    /**
+     * Server-side analytics (GA4 Measurement Protocol). Optional —
+     * trackEvent() is a no-op when either is unset.
+     */
+    GA4_MEASUREMENT_ID: string;
+    GA4_API_SECRET: string;
+
+    /**
+     * Client-side analytics (gtag.js). Optional — the GA4 <Script>
+     * tags in app/layout.tsx render only when this is set. Public by
+     * design (served to every visitor in the script src), so safe to
+     * expose with the NEXT_PUBLIC_ prefix.
+     */
+    NEXT_PUBLIC_GA4_MEASUREMENT_ID: string;
 
     /**
      * Auth related variables
      */
-
-    // GITHUB_ID: string;
+    NEXTAUTH_SECRET: string;
     GITHUB_CLIENT_ID: string;
     GITHUB_CLIENT_SECRET: string;
-    // GITHUB_ACCESS_TOKEN: string;
-
-    // TWITTER_CLIENT_ID: string;
-    // TWITTER_CLIENT_SECRET: string;
   }
 }
